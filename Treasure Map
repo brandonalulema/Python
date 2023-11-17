@@ -1,0 +1,33 @@
+------------------------------------------------------------DESCRIPTION------------------------------------------------------------
+#a program that will mark a spot on a map with an X.
+---------------------------------------------------------CODE WITH NOTES-----------------------------------------------------------
+
+#creating the 'map' with columns being A - B - C and the rows from top to bottom being 1 - 2 - 3.
+          #A    #B   #C
+line1 = ["⬜️","️⬜️","️⬜️"] #1
+line2 = ["⬜️","⬜️","️⬜️"] #2
+line3 = ["⬜️️","⬜️️","⬜️️"] #3
+
+#nested list
+map = [line1, line2, line3]
+
+print("Hiding your treasure! X marks the spot.")
+position = input("Where do you want to put the treasure?") 
+
+#lower cases the first input which is the letter for columns
+letter = position[0].lower()
+
+#creating a new list for the columns
+abc = ["a","b","c"]
+
+#uses the input to match in the list 'abc' and grab it's index
+letter_index = abc.index(letter)
+
+#grabs the number entered in the inputs, subtracts it by 1 to match indexes (if 3 is entered, it's actually index 2 in our list)
+number_index = int(position[1]) - 1
+
+#assigning the specific row then column to 'X', marking that spot
+map[number_index][letter_index] = "X"
+
+#prints it out as line1 - line3, now except with an 'X' on the location you chose 
+print(f"{line1}\n{line2}\n{line3}")
