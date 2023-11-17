@@ -8,15 +8,19 @@ game_choices = ['Rock', 'Paper', 'Scissors']
 
 user_choice = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors.\n"))
 
+#ruling out the possibility user enters values outside parameters.
 if user_choice > 2 or user_choice < 0:
-    print("You Typed an invalid user, you lose!")  
+    print("You typed an invalid value, you lose!")  
 else:
+    #grabs the number from input and then uses that number as the index to our list
     print(game_choices[user_choice])
 
+    #random computer generated answers
     computer_choice = random.randint(0,2)
     print("Computer chose:")
     print(game_choices[computer_choice])
 
+    #all possible outcomes to the rules of the game
     if user_choice == 0 and computer_choice == 2:
         print("You win!")
     elif computer_choice == 0 and user_choice == 2:
