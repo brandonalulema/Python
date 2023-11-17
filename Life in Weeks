@@ -1,0 +1,16 @@
+------------------------------------------------------------DESCRIPTION------------------------------------------------------------
+#creating a program that tells us how many weeks we have left, if we live until 90 years old.
+
+#example Input
+#56
+#example Output
+#You have 1768 weeks left.
+
+---------------------------------------------------------CODE WITH NOTES-----------------------------------------------------------
+age = input()
+
+int_age = int(age)
+years_left = (90 - int_age)
+weeks_left = years_left * 52 
+
+print(f"You have {weeks_left} weeks left, make it worthwhile.")
