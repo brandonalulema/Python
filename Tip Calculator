@@ -1,0 +1,18 @@
+------------------------------------------------------------DESCRIPTION------------------------------------------------------------
+#Get an input for the bill amount, then the percentage tip you want to give, then how many people are splitting the bill.
+#Output should result in how much each person must pay.
+
+#If the bill was $150.00, split between 5 people, with 12% tip.
+#Each person should pay (150.00/5) * 1.12 = 33.6
+
+---------------------------------------------------------CODE WITH NOTES-----------------------------------------------------------
+print("Welcome to the tip calculator")
+bill = float(input("What was the total bill?"))
+tip = int(input("What percentage tip would you like to give? 10, 12, or 15?"))
+num_of_split = int(input("How many people to split the bill?"))
+
+total_bill = (tip / 100 * bill) + bill  
+total_per_person = total_bill / num_of_split
+
+final = "{:.2f}".format(total_per_person)
+print(f"Each person should pay: ${final}")
